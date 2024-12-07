@@ -1,0 +1,48 @@
+<section class="cart">
+    <% if(session.cart) { %>
+    <div class="order-container">
+        <div class="cart-container">
+         <img src="/images/order-cart.webp" class="order-cart-img" alt="">
+         <p class="summary">Order Summary</p>
+        </div>
+    </div>
+
+    <% for(let pizza of Object.values(session.cart.items)) { %>
+    <div class="order-container">
+        <div class="pizza-list">
+             <div class="pizza-list-order">
+                <img src="/images/pizza.jpeg" class="cart-pizza-img" alt="">
+                <p class="cart-order-type"><%= pizza.item.name %></p>
+                <p class="cart-order-size"><%= pizza.item.size %></p>
+                <p class="quantity"><%= pizza.qty %>pcs</p>
+                <p class="price"><%= pizza.item.price * pizza.qty%></p>
+             </div>
+        </div>
+    </div>
+    <% }%>
+   
+    <div class="reciept">
+        <div class="total-amount">
+            <p>Total Amount:<span style="color: coral;"> ₹ <%= session.cart.totalprice %></span></p>
+        </div>
+        <div class="form">
+            <form action="">
+                <input class="add" type="text" placeholder="Address">
+                <input class="add" type="text" placeholder="Mobile">
+                <div>
+                <!-- <button class="order-from-cart">Order Now!</button> -->
+                </div>
+            </form>
+        </div>
+       <button class="order-from-cart login-from-cart"><a href=""></a>Login to Continue!</button>
+    </div>
+     <% } else { %>
+    <div class="empty-cart">
+        <h1 class="cart-heading">Sorry! Your Cart is Empty☹</h1>
+        <p class="cart-msg">It seems that probably you have not added any item to your cart.Please go to Home page to Order Pizza.  </p>
+        <img src="/images/cart-img.webp" class="cart-image">
+        <a href="/"><button class="cart-btn">Go Back</button></a>
+    </div> 
+    <% } %>
+
+</section>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza-Delivery</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.2/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+<div class="container" id="container">
+    <div class="logo-logo">
+    <img src="https://thumbs.dreamstime.com/z/food-delivery-logo-design-template-134749604.jpg" class="logo" alt="logo">
+    </div>
+    <div class="nav">
+        <ul class="nav-list">
+            <li><a href="#" class="item">Menu</a></li>
+            <li><a href="#" class="item">Offers</a></li>
+            <li><a href="/register" class="item">Register</a></li>
+            <li><a href="/login" class="item">Login</a></li>
+            <li class="cart-qty"><a href="/cart">
+               <span id="cartcounter" style="color: black; text-decoration: none;"><%= session.cart ? session.cart.totalqty : '' %></span>
+                <!-- <p class="cart-counter"><span>3</span></p> -->
+                <img src="https://static.vecteezy.com/system/resources/previews/010/838/010/original/shopping-cart-icon-logo-illustration-trolley-cart-symbol-template-for-graphic-and-web-design-collection-free-vector.jpg" class="cart-img" alt=""></a></li>
+        </ul>
+    </div>
+</div>
+<%- body %>
+<footer>
+
+</footer>
+    <script src="/js/app.js"></script>
+</body>
+</html> 
+

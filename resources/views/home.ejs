@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza-Delivery</title>
+    <!-- <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.2/dist/tailwind.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+<div class="container" id="container">
+<div class="heading">
+    <h1 class="heading1">WELCOME TO PIZZATORIA! </h1> 
+    <button class="order">Order Now!</button>
+    <img src="/images/pizza.jpeg" class="pizza-img">
+ </div> 
+ <h1 class="quote">Some People Eat to Live Some<span style="color: coral;"> Live to Eat!!</span></h1>
+ <% pizzas.forEach(function(pizza){ %>
+    <div class="veg" id="v">
+        <ul class="v-img-list">
+            <li>
+                <img src="/images/pizza.jpeg" alt="/img/pizza.jpeg" class="img">
+                <p class="time"><%= pizza.name %></p>
+                <p class="size"><%= pizza.size %></p>
+                <div>
+                    <span>₹<%= pizza.price %></span>
+                    <button  data-pizza="<%= JSON.stringify(pizza) %>" class="btn add-to-cart">+Add</button>
+                </div>
+            </li>
+        </ul>
+    </div>
+ <% }) %>
+</div>
+    <script src="/js/app.js"></script>
+</body>
+</html> 
+

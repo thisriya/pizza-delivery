@@ -1,0 +1,20 @@
+<section class="login">
+    
+    <form action="/register" method="POST">
+        <% if(messages.error) { %>
+        <p class="error"><%= messages.error %></p>
+        <% } %>
+       <div id="login">
+           <h2 id="h2_line">Please Register Yourself!</h2>
+           <label id="username">Userame: <input type="text" name="name" value="<%= messages.name%>" placeholder="Enter Username:" required /></label>
+           <br />
+           <label id="email">Email: <input type="email" name="email" value="<%= messages.email%>" placeholder="Enter Your Email:" required /></label>
+           <br />
+           <label id="password">Password: <input type="text" name="password" placeholder="Enter Your Password:" required /></label>
+           <br />
+           <button type="submit" onclick="" class="b" id="sign-in-btn">Register</button>
+           <a href="/login" class="forgot-link">Already Have Account?</a>
+       </div>
+    </form>
+</section>
+<p class="login-footer"> &copy; 2024 Pizzatoria. All rights reserved.</p>
